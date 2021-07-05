@@ -1,0 +1,114 @@
+@import url("bootstrap/dist/css/bootstrap.min.css");
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mt-150-mb-20 {
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+
+.custom-nav {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+}
+
+.navbar {
+  z-index: 99;
+  box-shadow: 0px 4px 18px -3px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: 0px 4px 18px -3px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 4px 18px -3px rgba(0, 0, 0, 0.42);
+}
+
+.bottom-shadow {
+  box-shadow: 2px 104px 55px -125px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 2px 104px 55px -125px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 104px 55px -125px rgba(0, 0, 0, 1);
+}
+
+.carousel-indicators li {
+  border-radius: 50%;
+  background-color: #000000;
+  height: 5px;
+  width: 5px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  justify-content: inherit;
+}
+
+.carousel-control-prev-icon::before {
+  content: "Prev";
+  text-transform: uppercase;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none;
+}
+
+.carousel-control-next-icon::after {
+  content: "Next";
+  text-transform: uppercase;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+
+.cat-card {
+  margin: 50px 0;
+  padding: 15px;
+  box-shadow: 0px 60px 20px -57px rgb(0 0 0 / 40%);
+  -webkit-box-shadow: 0px 60px 20px -57px rgb(0 0 0 / 40%);
+  -moz-box-shadow: 0px 60px 20px -57px rgb(0 0 0 / 40%);
+}
+
+.cat-card-img,
+.cat-card-desc {
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.cat-card-img img {
+  max-width: 50%;
+}
+
+.cat-card-desc h5 {
+  font-size: 18px;
+}
+
+.cat-card-desc p {
+  font-size: 12px;
+}
+
+.theme-button {
+  background-color: #d00256;
+  border-color: #d00256;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 0;
+  opacity: 0.8;
+}
+
+.theme-button:hover {
+  opacity: 1;
+  background-color: #d00256;
+  border-color: #d00256;
+}
+
+.plp {
+  background-color: #e8e8e8;
+}
+
+.footer {
+  padding: 10px;
+  background-color: #e8e8e8;
+  font-size: 14px;
+}
