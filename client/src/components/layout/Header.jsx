@@ -1,43 +1,40 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Container, Row, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import OfferOne from "./../../static/images/logo_2x.png";
+import Logo from "./../../static/images/logo_2x.png";
+import CartIcon from "./../../static/images/cart.svg";
 
 const Header = () => {
   return (
     <Navbar bg="light" expand="lg" className="navbar" fixed="top">
-      <Navbar.Brand href="/">
-        <img
-          src={OfferOne}
-          width="200"
-          height="70"
-          className="d-inline-block align-top"
-          alt="React Bootstrap logo"
-        />
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto justify-content-center">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-          <Link to="/products/all" className="nav-link">
-            Products
-          </Link>
-        </Nav>
-      </Navbar.Collapse>
+      <Container className="pos-rel">
+        <Row>
+          <Navbar.Brand href="/">
+            <img src={Logo} alt="React Bootstrap logo" className="logo" />
+          </Navbar.Brand>
+          <Nav className="mr-auto justify-content-center main-nav">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+            <Link to="/products/all" className="nav-link">
+              Products
+            </Link>
+          </Nav>
 
-      <Nav className="mr-auto justify-content-end custom-nav">
-        <Link to="/signin" className="nav-link">
-          SignIn
-        </Link>
-        <Link to="/register" className="nav-link">
-          Register
-        </Link>
-      </Nav>
-      <Nav className="mr-auto justify-content-end">
-        <Nav.Link href="#home">Cart</Nav.Link>
-      </Nav>
+          <Nav className="mr-auto justify-content-end auth-nav">
+            <Link to="/signin" className="nav-link">
+              SignIn
+            </Link>
+            <Link to="/register" className="nav-link">
+              Register
+            </Link>
+          </Nav>
+        </Row>
+
+        <Button variant="primary" className="cart-btn">
+          <img src={CartIcon} alt="cart" /> 0 items
+        </Button>
+      </Container>
     </Navbar>
   );
 };

@@ -45,8 +45,8 @@ function App() {
             exact
             path="/signin"
             render={(props) => (
-              <Container fluid className="mt-150-mb-20">
-                <Row>
+              <Container className="mt-150-mb-20">
+                <Row className="auth">
                   <SignIn />
                 </Row>
               </Container>
@@ -56,8 +56,8 @@ function App() {
             exact
             path="/register"
             render={(props) => (
-              <Container fluid className="mt-150-mb-20">
-                <Row>
+              <Container className="mt-150-mb-20">
+                <Row className="auth">
                   <Register />
                 </Row>
               </Container>

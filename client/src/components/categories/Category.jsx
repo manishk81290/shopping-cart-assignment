@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Col, Image, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import CategoryItem from "./CategoryItem";
 
 //import {} from "./../../static/images/category"
 
-const Category = () => {
+const Category = (props) => {
   const categories = [
     {
       name: "Beverages",
@@ -65,18 +66,28 @@ const Category = () => {
     },
   ];
 
+  let history = useHistory();
   return (
     <>
       {categories.map((category, index) => {
         return index % 2 === 0 ? (
           <CategoryItem key={category.key}>
             <Col md={6} className="cat-card-img">
-              <Image src={`./../..${category.imageUrl}`} fluid />
+              <Image
+                src={require("./../../static/images/category/baby.png")}
+                fluid
+              />
             </Col>
             <Col md={6} className="cat-card-desc">
               <h5>{category.name}</h5>
               <p>{category.description}</p>
-              <Button variant="primary" className="theme-button">
+              <Button
+                variant="primary"
+                className="theme-button"
+                onClick={() => {
+                  history.push(`/products/${category.id}`);
+                }}
+              >
                 Explore {category.name}
               </Button>
             </Col>
@@ -86,12 +97,21 @@ const Category = () => {
             <Col md={6} className="cat-card-desc">
               <h5>{category.name}</h5>
               <p>{category.description}</p>
-              <Button variant="primary" className="theme-button">
+              <Button
+                variant="primary"
+                className="theme-button"
+                onClick={() => {
+                  history.push(`/products/${category.id}`);
+                }}
+              >
                 Explore {category.name}
               </Button>
             </Col>
             <Col md={6} className="cat-card-img">
-              <Image src={`./../..${category.imageUrl}`} fluid />
+              <Image
+                src={require("./../../static/images/category/baby.png")}
+                fluid
+              />
             </Col>
           </CategoryItem>
         );

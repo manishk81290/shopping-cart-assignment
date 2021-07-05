@@ -13,8 +13,8 @@ const ProductItem = ({
   imageUrl,
 }) => {
   return (
-    <Col md={3} className="pr-0">
-      <Card className="brb-1-dashed-imp">
+    <Col lg={3} md={6} sm={12} className="pr-0">
+      <Card className="brb-1-dashed">
         <Card.Body>
           <Card.Title>{name}</Card.Title>
         </Card.Body>
@@ -22,9 +22,12 @@ const ProductItem = ({
         <Card.Body>
           <Card.Text>{description}</Card.Text>
           <div>
-            <p className="card-price">MRP Rs.{price}</p>
-            <Button variant="primary" className="theme-button">
+            <p className="card-price lg">MRP Rs.{price}</p>
+            <Button variant="primary" className="theme-button lg">
               Buy Now
+            </Button>
+            <Button variant="primary" className="theme-button md">
+              Buy Now @ Rs.{price}
             </Button>
           </div>
         </Card.Body>

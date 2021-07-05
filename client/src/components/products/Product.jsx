@@ -295,8 +295,8 @@ const Product = ({ match }) => {
     console.log(product);
   }, [match.params.productCategory]);
   return (
-    <Col md={9}>
-      <Row md={12}>
+    <Col lg={9} md={9} sm={12}>
+      <Row lg={9} md={12} sm={12}>
         {product.length ? (
           product.map((prod) => {
             return <ProductItem {...prod} />;
