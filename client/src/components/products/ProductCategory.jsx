@@ -66,7 +66,7 @@ const ProductCategory = () => {
   });
   console.log(categoryList);
   return (
-    <Col md={3}>
+    <Col md={3} className="bg-col-e8e8e8">
       <Card style={{ width: "100%" }}>
         {/* <Card.Header>Featured</Card.Header> */}
         <ListGroup variant="flush">

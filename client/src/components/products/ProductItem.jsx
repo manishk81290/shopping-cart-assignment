@@ -13,18 +13,20 @@ const ProductItem = ({
   imageUrl,
 }) => {
   return (
-    <Col md={3}>
-      <Card>
+    <Col md={3} className="pr-0">
+      <Card className="brb-1-dashed-imp">
         <Card.Body>
           <Card.Title>{name}</Card.Title>
         </Card.Body>
         <Card.Img variant="top" src={`.${imageURL}`} />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
           <Card.Text>{description}</Card.Text>
-          <Button variant="primary" className="theme-button">
-            Buy Now
-          </Button>
+          <div>
+            <p className="card-price">MRP Rs.{price}</p>
+            <Button variant="primary" className="theme-button">
+              Buy Now
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     </Col>

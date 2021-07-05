@@ -9,6 +9,22 @@
   margin-bottom: 20px;
 }
 
+.pl-0 {
+  padding-left: 0px;
+}
+
+.pr-0 {
+  padding-right: 0px;
+}
+
+.bg-col-e8e8e8 {
+  background-color: #e8e8e8;
+}
+
+.brb-1-dashed-imp {
+  border-bottom: 1px dashed #706f6f !important;
+}
+
 .custom-nav {
   position: absolute;
   right: 15px;
@@ -111,4 +127,53 @@
   padding: 10px;
   background-color: #e8e8e8;
   font-size: 14px;
+}
+
+.card {
+  margin-bottom: 10px;
+  border: 0px;
+  border-radius: 0px;
+  .list-group {
+    border: 0px;
+    border-radius: 0px !important;
+    .list-group-item {
+      border: 0px;
+      border-bottom: 1px solid #706f6f;
+      background-color: #e8e8e8;
+      a {
+        color: #706f6f;
+      }
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+    height: 67px;
+  }
+  .card-text {
+    padding: 5px;
+    font-size: 0.75rem;
+    text-align: inherit;
+    background-color: #e8e8e8;
+    line-height: 1.34em;
+    height: 72px;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-price {
+    float: left;
+    font-size: 0.9rem;
+    line-height: 40px;
+  }
+  button {
+    float: right;
+  }
 }

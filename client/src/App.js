@@ -11,7 +11,7 @@ import ProductCategory from "./components/products/ProductCategory";
 import SignIn from "./components/pages/SignIn";
 import Register from "./components/pages/Register";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
             exact
             path="/products/:productCategory"
             render={(props) => (
-              <Container fluid className="mt-150-mb-20">
+              <Container className="mt-150-mb-20">
                 <Row>
                   <ProductCategory />
                   <Product {...props} />
