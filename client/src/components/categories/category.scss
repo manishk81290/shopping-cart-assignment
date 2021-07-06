@@ -1,0 +1,66 @@
+.cat-card {
+  margin: 50px 0;
+  padding: 15px;
+  box-shadow: 0px 60px 20px -57px rgb(0 0 0 / 40%);
+  -webkit-box-shadow: 0px 60px 20px -57px rgb(0 0 0 / 40%);
+  -moz-box-shadow: 0px 60px 20px -57px rgb(0 0 0 / 40%);
+  .cat-card-img,
+  .cat-card-desc {
+    text-align: center;
+    background-color: #ffffff;
+  }
+
+  .cat-card-img {
+    img {
+      max-width: 50%;
+    }
+  }
+
+  .cat-card-desc {
+    h5 {
+      font-size: 18px;
+    }
+  }
+
+  .cat-card-desc {
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+.dropdown {
+  button {
+    width: 100%;
+    background-color: #e8e8e8;
+    color: #000000;
+    border: 0;
+    text-align: left;
+    &::after {
+      position: absolute;
+      right: 10px;
+      top: 18px;
+    }
+    &:focus,
+    &:hover,
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active {
+      background-color: #e8e8e8 !important;
+      color: #000000 !important;
+      border: 0;
+      box-shadow: none;
+    }
+
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled):active:focus {
+      box-shadow: none;
+    }
+  }
+  .dropdown-menu {
+    width: 100%;
+    a {
+      text-decoration: none;
+      color: #706f6f;
+    }
+  }
+}

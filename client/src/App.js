@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -10,14 +10,20 @@ import Product from "./components/products/Product";
 import ProductCategory from "./components/products/ProductCategory";
 import SignIn from "./components/pages/SignIn";
 import Register from "./components/pages/Register";
+import Cart from "./components/cart/Cart";
 
 import "./App.scss";
 
 function App() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <Router>
+      <Cart show={show} handleClose={handleClose} />
       <div className="App">
-        <Header />
+        <Header handleShow={handleShow} />
         <Switch>
           <Route
             exact

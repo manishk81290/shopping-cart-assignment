@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import Logo from "./../../static/images/logo_2x.png";
 import CartIcon from "./../../static/images/cart.svg";
 
-const Header = () => {
+import "./layout.scss";
+
+const Header = ({ handleShow }) => {
   return (
     <Navbar bg="light" expand="lg" className="navbar" fixed="top">
       <Container className="pos-rel">
@@ -31,7 +33,7 @@ const Header = () => {
           </Nav>
         </Row>
 
-        <Button variant="primary" className="cart-btn">
+        <Button variant="primary" className="cart-btn" onClick={handleShow}>
           <img src={CartIcon} alt="cart" /> 0 items
         </Button>
       </Container>

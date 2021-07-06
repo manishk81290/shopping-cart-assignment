@@ -18,7 +18,7 @@ const ProductItem = ({
         <Card.Body>
           <Card.Title>{name}</Card.Title>
         </Card.Body>
-        <Card.Img variant="top" src={`.${imageURL}`} />
+        <Card.Img variant="top" src={`${process.env.PUBLIC_URL}${imageURL}`} />
         <Card.Body>
           <Card.Text>{description}</Card.Text>
           <div>

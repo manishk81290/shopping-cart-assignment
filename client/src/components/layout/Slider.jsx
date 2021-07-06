@@ -8,7 +8,7 @@ import OfferFive from "./../../static/images/offers/offer5.jpg";
 
 const Slider = () => {
   return (
-    <Row md={12} className="mt-100">
+    <Row md={12} className="mt-100- slider">
       <Col>
         <Carousel interval={1000} className="bottom-shadow">
           <Carousel.Item>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Form, Button } from "react-bootstrap";
 
+import "./pages.scss";
 const SignIn = () => {
   return (
     <>
