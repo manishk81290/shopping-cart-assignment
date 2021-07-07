@@ -12,7 +12,7 @@ const Header = ({ handleShow }) => {
       <Container className="pos-rel">
         <Row>
           <Navbar.Brand href="/">
-            <img src={Logo} alt="React Bootstrap logo" className="logo" />
+            <Image src={Logo} alt="React Bootstrap logo" className="logo" />
           </Navbar.Brand>
           <Nav className="mr-auto justify-content-center main-nav">
             <Link to="/" className="nav-link">
@@ -34,7 +34,7 @@ const Header = ({ handleShow }) => {
         </Row>
 
         <Button variant="primary" className="cart-btn" onClick={handleShow}>
-          <img src={CartIcon} alt="cart" /> 0 items
+          <Image src={CartIcon} alt="cart" /> 0 items
         </Button>
       </Container>
     </Navbar>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Button, Alert } from "react-bootstrap";
+import { Row, Col, Alert } from "react-bootstrap";
 import ProductItem from "./ProductItem";
 
 import "./product.scss";

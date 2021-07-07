@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Image, ButtonGroup, Button } from "react-bootstrap";
+import { Row, Col, Image, Button } from "react-bootstrap";
 
 export const CartItem = ({ item }) => {
   console.log(item);

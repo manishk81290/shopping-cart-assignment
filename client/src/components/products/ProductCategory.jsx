@@ -67,9 +67,14 @@ const ProductCategory = () => {
       imageUrl: "/static/images/category/fruits.png",
       id: "5b6899953d1a866534f516e2",
     },
-  ].map((cat) => {
-    return { name: cat.name, key: cat.key, id: cat.id };
-  });
+  ]
+    .map((cat) => {
+      return { name: cat.name, key: cat.key, id: cat.id, order: cat.order };
+    })
+    .sort((a, b) => {
+      return a.order - b.order;
+    })
+    .filter((cat) => cat.order !== -1);
   console.log(categoryList);
   return (
     <Col md={3} className="bg-col-e8e8e8">

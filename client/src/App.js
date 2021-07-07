@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -12,12 +12,24 @@ import SignIn from "./components/pages/SignIn";
 import Register from "./components/pages/Register";
 import Cart from "./components/cart/Cart";
 
+import CategoryService from "./services/CategoryService";
+import ProductService from "./services/ProductService";
+
 import "./App.scss";
 
 function App() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    CategoryService.getCategories();
+    CategoryService.getCategoryById("5b6899953d1a866534f516e2");
+
+    ProductService.getProducts();
+    ProductService.getProductById("5b6c6c1801a7c38429530887");
+    ProductService.getProductByCategoryId("5b6899953d1a866534f516e2");
+  }, []);
 
   return (
     <Router>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { Container, Modal, Button } from "react-bootstrap";
 import CartItem from "./CartItem";
 
 import "./cart.scss";
