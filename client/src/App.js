@@ -14,11 +14,14 @@ import Cart from "./components/cart/Cart";
 
 import CategoryService from "./services/CategoryService";
 import ProductService from "./services/ProductService";
+import BannerService from "./services/BannerService";
+import CartService from "./services/CartService";
 
 import "./App.scss";
 
 function App() {
   const [show, setShow] = useState(false);
+  const [banners, setBanners] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -29,7 +32,11 @@ function App() {
     ProductService.getProducts();
     ProductService.getProductById("5b6c6c1801a7c38429530887");
     ProductService.getProductByCategoryId("5b6899953d1a866534f516e2");
-  }, []);
+
+    CartService.addToCart();
+
+    if (banners === []) setBanners(BannerService.getBanners());
+  }, [banners]);
 
   return (
     <Router>
@@ -42,7 +49,7 @@ function App() {
             path={["/", "/home"]}
             render={(props) => (
               <Container fluid>
-                <Slider />
+                <Slider banners={banners} />
                 <Category />
               </Container>
             )}

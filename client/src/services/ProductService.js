@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GETPRODUCTURL } from "./config";
 
-const CategoryService = {
+const ProductService = {
   getProducts: async () => {
     try {
       const response = await axios.get(GETPRODUCTURL);
@@ -28,4 +28,4 @@ const CategoryService = {
   },
 };
 
-export default CategoryService;
+export default ProductService;

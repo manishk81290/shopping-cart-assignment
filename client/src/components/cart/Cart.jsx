@@ -73,7 +73,7 @@ const Cart = ({ show, handleClose }) => {
       <Modal.Body>
         <Container fluid>
           {cartItems.map((item) => {
-            return <CartItem item={item} />;
+            return <CartItem item={item} key={item.id} />;
           })}
         </Container>
       </Modal.Body>
