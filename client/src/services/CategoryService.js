@@ -1,19 +1,10 @@
-import axios from "axios";
-import { GETCATEGORYURL } from "./config";
+import { CATEGORY_URL } from "./config";
+import { get } from "./api";
 
 const CategoryService = {
   getCategories: async () => {
     try {
-      const response = await axios.get(GETCATEGORYURL);
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  },
-  getCategoryById: async (categoryId) => {
-    try {
-      const response = await axios.get(GETCATEGORYURL);
-      console.log(response.data.filter((cat) => cat.id === categoryId));
+      return get(CATEGORY_URL);
     } catch (error) {
       console.log(error);
     }

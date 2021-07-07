@@ -1,22 +1,10 @@
-import axios from "axios";
-import { GETBANNERURL } from "./config";
+import { BANNER_URL } from "./config";
+import { get } from "./api";
 
 const BannerService = {
   getBanners: async () => {
     try {
-      let response = [];
-      await axios.get(GETBANNERURL).then((res) => {
-        response = res.data;
-      });
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-  },
-  getBannerById: async (bannerId) => {
-    try {
-      const response = await axios.get(GETBANNERURL);
-      console.log(response.data.filter((cat) => cat.id === bannerId));
+      return get(BANNER_URL);
     } catch (error) {
       console.log(error);
     }

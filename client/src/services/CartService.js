@@ -1,11 +1,11 @@
 import axios from "axios";
-import { POSTCARTURL } from "./config";
+import { CART_URL } from "./config";
 
 const CartService = {
   addToCart: async () => {
     try {
       let response = [];
-      await axios.get(POSTCARTURL).then((res) => {
+      await axios.get(CART_URL).then((res) => {
         response = res.data;
         console.log(res);
       });

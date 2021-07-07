@@ -1,27 +1,10 @@
-import axios from "axios";
-import { GETPRODUCTURL } from "./config";
+import { PRODUCT_URL } from "./config";
+import { get } from "./api";
 
 const ProductService = {
   getProducts: async () => {
     try {
-      const response = await axios.get(GETPRODUCTURL);
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  },
-  getProductById: async (productId) => {
-    try {
-      const response = await axios.get(GETPRODUCTURL);
-      console.log(response.data.filter((prod) => prod.id === productId));
-    } catch (error) {
-      console.log(error);
-    }
-  },
-  getProductByCategoryId: async (categoryId) => {
-    try {
-      const response = await axios.get(GETPRODUCTURL);
-      console.log(response.data.filter((prod) => prod.category === categoryId));
+      return get(PRODUCT_URL);
     } catch (error) {
       console.log(error);
     }

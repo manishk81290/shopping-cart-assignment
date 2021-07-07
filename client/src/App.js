@@ -22,21 +22,43 @@ import "./App.scss";
 function App() {
   const [show, setShow] = useState(false);
   const [banners, setBanners] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   useEffect(() => {
-    CategoryService.getCategories();
-    CategoryService.getCategoryById("5b6899953d1a866534f516e2");
+    // CategoryService.getCategories();
+    // CategoryService.getCategoryById("5b6899953d1a866534f516e2");
+    // ProductService.getProducts();
+    // ProductService.getProductById("5b6c6c1801a7c38429530887");
+    // ProductService.getProductByCategoryId("5b6899953d1a866534f516e2");
+    // CartService.addToCart();
+  });
 
-    ProductService.getProducts();
-    ProductService.getProductById("5b6c6c1801a7c38429530887");
-    ProductService.getProductByCategoryId("5b6899953d1a866534f516e2");
-
-    CartService.addToCart();
-
-    if (banners === []) setBanners(BannerService.getBanners());
+  useEffect(() => {
+    if (!banners.length)
+      BannerService.getBanners().then(({ ...res }) => {
+        const data = res.data.sort((a, b) => a.order - b.order);
+        setBanners(data);
+      });
   }, [banners]);
+
+  useEffect(() => {
+    if (!categories.length)
+      CategoryService.getCategories().then(({ ...res }) => {
+        const data = res.data.sort((a, b) => a.order - b.order);
+        setCategories(data);
+      });
+  }, [categories]);
+
+  useEffect(() => {
+    if (!products.length)
+      ProductService.getProducts().then(({ ...res }) => {
+        const data = res.data.sort((a, b) => a.order - b.order);
+        setProducts(data);
+      });
+  }, [products]);
 
   return (
     <Router>
@@ -50,7 +72,7 @@ function App() {
             render={(props) => (
               <Container fluid>
                 <Slider banners={banners} />
-                <Category />
+                <Category categories={categories} />
               </Container>
             )}
           />
@@ -60,8 +82,8 @@ function App() {
             render={(props) => (
               <Container className="mt-150-mb-20">
                 <Row>
-                  <ProductCategory />
-                  <Product {...props} />
+                  <ProductCategory categories={categories} />
+                  <Product {...props} products={products} />
                 </Row>
               </Container>
             )}
