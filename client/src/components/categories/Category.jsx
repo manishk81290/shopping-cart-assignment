@@ -15,7 +15,7 @@ const Category = ({ categories }) => {
         })
         .filter((cat) => cat.order !== -1)
         .map((category, index) => {
-          return index % 2 !== 0 ? (
+          return index % 2 === 0 ? (
             <CategoryItem key={category.key}>
               <Col md={6} className="cat-card-img">
                 <Image
