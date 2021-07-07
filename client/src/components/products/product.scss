@@ -4,6 +4,10 @@
   border-radius: 0px;
   &.brb-1-dashed {
     border-bottom: 1px dashed #706f6f;
+
+    box-shadow: 12px 0px 20px -10px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 12px 0px 20px -10px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 12px 0px 20px -10px rgba(0, 0, 0, 0.39);
   }
   .list-group {
     border: 0px;
