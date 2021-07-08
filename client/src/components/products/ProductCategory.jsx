@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Col,
@@ -8,7 +8,14 @@ import {
   Dropdown,
 } from "react-bootstrap";
 
-const ProductCategory = ({ categories }) => {
+import ShoppingContext from "../../context/ShoppingContext";
+
+const ProductCategory = () => {
+  const shoppingContext = useContext(ShoppingContext);
+  const { categories, getCategories } = shoppingContext;
+  useEffect(() => {
+    if (!categories.length) getCategories();
+  }, []);
   const categoryList = categories
     .map((cat) => {
       return { name: cat.name, key: cat.key, id: cat.id, order: cat.order };
@@ -16,7 +23,7 @@ const ProductCategory = ({ categories }) => {
     .filter((cat) => cat.order !== -1);
   console.log(categoryList);
   return (
-    <Col md={3} className="bg-col-e8e8e8">
+    <Col md={3} className="bg-col-e8e8e8 pr-0 pl-0">
       <Card style={{ width: "100%" }} className="xs-hide">
         {/* <Card.Header>Featured</Card.Header> */}
         <ListGroup variant="flush">

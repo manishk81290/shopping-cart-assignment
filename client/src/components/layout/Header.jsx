@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Nav, Navbar, Container, Row, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "./../../static/images/logo_2x.png";
 import CartIcon from "./../../static/images/cart.svg";
 
+import ShoppingContext from "../../context/ShoppingContext";
+
 import "./layout.scss";
 
 const Header = ({ handleShow }) => {
+  const shoppingContext = useContext(ShoppingContext);
+  const { cart } = shoppingContext;
   return (
     <Navbar bg="light" expand="lg" className="navbar" fixed="top">
       <Container className="pos-rel">
@@ -34,7 +38,13 @@ const Header = ({ handleShow }) => {
         </Row>
 
         <Button variant="primary" className="cart-btn" onClick={handleShow}>
-          <Image src={CartIcon} alt="cart" /> 0 items
+          <Image src={CartIcon} alt="cart" />{" "}
+          {cart.length &&
+            cart.reduce(
+              (accumulator, item) => accumulator + item.count,
+              0
+            )}{" "}
+          items
         </Button>
       </Container>
     </Navbar>

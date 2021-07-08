@@ -17,87 +17,55 @@ import ProductService from "./services/ProductService";
 import BannerService from "./services/BannerService";
 import CartService from "./services/CartService";
 
+import ShoppingState from "./context/ShoppingState";
+
 import "./App.scss";
 
 function App() {
   const [show, setShow] = useState(false);
-  const [banners, setBanners] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(() => {
-    // CategoryService.getCategories();
-    // CategoryService.getCategoryById("5b6899953d1a866534f516e2");
-    // ProductService.getProducts();
-    // ProductService.getProductById("5b6c6c1801a7c38429530887");
-    // ProductService.getProductByCategoryId("5b6899953d1a866534f516e2");
-    // CartService.addToCart();
-  });
-
-  useEffect(() => {
-    if (!banners.length)
-      BannerService.getBanners().then(({ ...res }) => {
-        const data = res.data.sort((a, b) => a.order - b.order);
-        setBanners(data);
-      });
-  }, [banners]);
-
-  useEffect(() => {
-    if (!categories.length)
-      CategoryService.getCategories().then(({ ...res }) => {
-        const data = res.data.sort((a, b) => a.order - b.order);
-        setCategories(data);
-      });
-  }, [categories]);
-
-  useEffect(() => {
-    if (!products.length)
-      ProductService.getProducts().then(({ ...res }) => {
-        const data = res.data.sort((a, b) => a.order - b.order);
-        setProducts(data);
-      });
-  }, [products]);
-
   return (
-    <Router>
-      <Cart show={show} handleClose={handleClose} />
-      <div className="App">
-        <Header handleShow={handleShow} />
-        <Switch>
-          <Route
-            exact
-            path={["/", "/home"]}
-            render={(props) => (
-              <Container fluid>
-                <Slider banners={banners} />
-                <Category categories={categories} />
-              </Container>
-            )}
-          />
-          <Route
-            exact
-            path="/products/:productCategory"
-            render={(props) => (
-              <Container className="mt-150-mb-20">
-                <Row>
-                  <ProductCategory categories={categories} />
-                  <Product {...props} products={products} />
-                </Row>
-              </Container>
-            )}
-          />
-          <Route exact path="/signin">
-            <SignIn />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-        </Switch>
-        <Footer copyright="Sabka Bazar Grocery Supplies Pvt Ltd" />
-      </div>
-    </Router>
+    <ShoppingState>
+      <Router>
+        <Cart show={show} handleClose={handleClose} />
+        <div className="App">
+          <Header handleShow={handleShow} />
+          <Switch>
+            <Route
+              exact
+              path={["/", "/home"]}
+              render={(props) => (
+                <Container fluid>
+                  <Slider />
+                  <Category />
+                </Container>
+              )}
+            />
+            <Route
+              exact
+              path="/products/:productCategory"
+              render={(props) => (
+                <Container className="mt-150-mb-20">
+                  <Row>
+                    <ProductCategory />
+                    <Product {...props} />
+                  </Row>
+                </Container>
+              )}
+            />
+            <Route exact path="/signin">
+              <SignIn />
+            </Route>
+            <Route exact path="/register">
+              <Register />
+            </Route>
+          </Switch>
+          <Footer copyright="Sabka Bazar Grocery Supplies Pvt Ltd" />
+        </div>
+      </Router>
+    </ShoppingState>
   );
 }
 

@@ -1,17 +1,40 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
 
-const ProductItem = ({
-  name,
-  imageURL,
-  description,
-  price,
-  stock,
-  category,
-  sku,
-  id,
-  imageUrl,
-}) => {
+import ShoppingContext from "../../context/ShoppingContext";
+
+const ProductItem = ({ item }) => {
+  const {
+    name,
+    imageURL,
+    description,
+    price,
+    stock,
+    category,
+    sku,
+    id,
+    imageUrl,
+  } = item;
+  const shoppingContext = useContext(ShoppingContext);
+  const { cart, updateCart } = shoppingContext;
+
+  const buyNow = () => {
+    let index = -1;
+    cart.filter((item, i) => {
+      if (item.id === id) {
+        index = i;
+        return true;
+      }
+    });
+    let newCart = [...cart];
+    if (index !== -1) {
+      newCart[index]["count"] += 1;
+    } else {
+      item["count"] = 1;
+      newCart.push(item);
+    }
+    updateCart(newCart);
+  };
   return (
     <Col lg={3} md={6} sm={12} className="pr-0">
       <Card className="brb-1-dashed">
@@ -23,7 +46,11 @@ const ProductItem = ({
           <Card.Text>{description}</Card.Text>
           <div>
             <p className="card-price lg">MRP Rs.{price}</p>
-            <Button variant="primary" className="theme-button lg">
+            <Button
+              variant="primary"
+              className="theme-button lg"
+              onClick={buyNow}
+            >
               Buy Now
             </Button>
             <Button variant="primary" className="theme-button md">

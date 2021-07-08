@@ -1,8 +1,7 @@
 import React from "react";
 import { Row, Col, Image, Button } from "react-bootstrap";
 
-export const CartItem = ({ item }) => {
-  console.log(item);
+export const CartItem = ({ item, index, updateQuantity }) => {
   return (
     <Row md={12} className="cart-item">
       <Col md={3}>
@@ -10,16 +9,28 @@ export const CartItem = ({ item }) => {
       </Col>
       <Col md={9} className="pl-0">
         <h5>{item.name}</h5>
-        <Button variant="primary" className="theme-button">
+        <Button
+          variant="primary"
+          className="theme-button"
+          onClick={() => {
+            updateQuantity("decrement", index);
+          }}
+        >
           -
         </Button>
-        <span>1</span>
-        <Button variant="primary" className="theme-button">
+        <span>{item.count}</span>
+        <Button
+          variant="primary"
+          className="theme-button"
+          onClick={() => {
+            updateQuantity("increment", index);
+          }}
+        >
           +
         </Button>
         <span>x</span>
         <span>Rs.{item.price}</span>
-        <span className="total">Total</span>
+        <span className="total">Rs.{item.price * item.count}</span>
       </Col>
     </Row>
   );

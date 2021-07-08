@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Row, Col, Carousel, Image } from "react-bootstrap";
+import ShoppingContext from "../../context/ShoppingContext";
 
-const Slider = ({ banners }) => {
+const Slider = () => {
+  const shoppingContext = useContext(ShoppingContext);
+  const { getBanners, banners } = shoppingContext;
+  useEffect(() => {
+    if (!banners.length) getBanners();
+  }, []);
   return (
     <Row md={12} className="mt-100- slider">
       <Col>
