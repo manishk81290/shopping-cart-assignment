@@ -15,9 +15,9 @@ const Header = ({ handleShow }) => {
     <Navbar bg="light" expand="lg" className="navbar" fixed="top">
       <Container className="pos-rel">
         <Row>
-          <Navbar.Brand href="/">
+          <Link to="/" className="navbar-brand">
             <Image src={Logo} alt="React Bootstrap logo" className="logo" />
-          </Navbar.Brand>
+          </Link>
           <Nav className="mr-auto justify-content-center main-nav">
             <Link to="/" className="nav-link">
               Home
