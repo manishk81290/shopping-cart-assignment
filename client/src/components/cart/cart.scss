@@ -56,6 +56,24 @@
         float: right;
       }
     }
+    &.no-item {
+      display: table;
+      text-align: center;
+      .container-fluid {
+        display: table-row;
+        .row {
+          display: table-cell;
+          vertical-align: middle;
+          font-size: 0.9rem;
+          font-weight: 500;
+          span {
+            font-size: 0.7rem;
+            font-weight: normal;
+            display: block;
+          }
+        }
+      }
+    }
   }
   .modal-footer {
     justify-content: inherit;

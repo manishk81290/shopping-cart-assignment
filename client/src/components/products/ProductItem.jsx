@@ -53,7 +53,11 @@ const ProductItem = ({ item }) => {
             >
               Buy Now
             </Button>
-            <Button variant="primary" className="theme-button md">
+            <Button
+              variant="primary"
+              className="theme-button md"
+              onClick={buyNow}
+            >
               Buy Now @ Rs.{price}
             </Button>
           </div>

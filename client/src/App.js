@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
 
@@ -11,11 +11,6 @@ import ProductCategory from "./components/products/ProductCategory";
 import SignIn from "./components/pages/SignIn";
 import Register from "./components/pages/Register";
 import Cart from "./components/cart/Cart";
-
-import CategoryService from "./services/CategoryService";
-import ProductService from "./services/ProductService";
-import BannerService from "./services/BannerService";
-import CartService from "./services/CartService";
 
 import ShoppingState from "./context/ShoppingState";
 

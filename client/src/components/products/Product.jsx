@@ -29,7 +29,7 @@ const Product = ({ match }) => {
       <Row lg={9} md={12} sm={12}>
         {product.length ? (
           product.map((prod) => {
-            return <ProductItem item={prod} />;
+            return <ProductItem item={prod} key={prod.key} />;
           })
         ) : (
           <Alert variant="info">No Product Found!!!!</Alert>

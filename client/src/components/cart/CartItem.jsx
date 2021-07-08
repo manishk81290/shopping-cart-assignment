@@ -3,11 +3,11 @@ import { Row, Col, Image, Button } from "react-bootstrap";
 
 export const CartItem = ({ item, index, updateQuantity }) => {
   return (
-    <Row md={12} className="cart-item">
-      <Col md={3}>
+    <Row xs={12} className="cart-item">
+      <Col xs={3}>
         <Image src={`${process.env.PUBLIC_URL}${item.imageURL}`} thumbnail />
       </Col>
-      <Col md={9} className="pl-0">
+      <Col xs={9} className="pl-0">
         <h5>{item.name}</h5>
         <Button
           variant="primary"

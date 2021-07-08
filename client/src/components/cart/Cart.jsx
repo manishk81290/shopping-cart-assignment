@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Container, Modal, Button } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import CartItem from "./CartItem";
 
 import ShoppingContext from "../../context/ShoppingContext";
@@ -34,18 +34,27 @@ const Cart = ({ show, handleClose }) => {
           </span>
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className={!cart.length && "no-item"}>
         <Container fluid>
-          {cart.map((item, index) => {
-            return (
-              <CartItem
-                item={item}
-                index={index}
-                key={item.id}
-                updateQuantity={updateQuantity}
-              />
-            );
-          })}
+          {cart.length ? (
+            cart.map((item, index) => {
+              return (
+                <CartItem
+                  item={item}
+                  index={index}
+                  key={item.id}
+                  updateQuantity={updateQuantity}
+                />
+              );
+            })
+          ) : (
+            <Row md={12}>
+              <Col md={12}>
+                No Item in the cart
+                <span>Your favourite items are just a click away</span>
+              </Col>
+            </Row>
+          )}
         </Container>
       </Modal.Body>
       <Modal.Footer>
