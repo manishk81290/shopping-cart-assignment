@@ -88,28 +88,12 @@ function App() {
               </Container>
             )}
           />
-          <Route
-            exact
-            path="/signin"
-            render={(props) => (
-              <Container className="mt-150-mb-20">
-                <Row className="auth">
-                  <SignIn />
-                </Row>
-              </Container>
-            )}
-          />
-          <Route
-            exact
-            path="/register"
-            render={(props) => (
-              <Container className="mt-150-mb-20">
-                <Row className="auth">
-                  <Register />
-                </Row>
-              </Container>
-            )}
-          />
+          <Route exact path="/signin">
+            <SignIn />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
         </Switch>
         <Footer copyright="Sabka Bazar Grocery Supplies Pvt Ltd" />
       </div>

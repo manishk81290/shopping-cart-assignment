@@ -8,7 +8,7 @@ const Slider = ({ banners }) => {
         <Carousel interval={1000} className="bottom-shadow">
           {banners.map((banner) => {
             return (
-              <Carousel.Item>
+              <Carousel.Item key={banner.id}>
                 <Image
                   src={`${process.env.PUBLIC_URL}${banner.bannerImageUrl}`}
                   alt={banner.bannerImageAlt}
