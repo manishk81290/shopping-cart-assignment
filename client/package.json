@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "shopping-cart-assignment",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "jest": "^26.6.0",
+    "jest-junit": "^12.2.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
@@ -20,8 +22,25 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js, jsx}",
+      "!src/index.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "clover",
+      "text",
+      "lcov",
+      "text-summary",
+      "html"
+    ]
+  },
+  "jest-junit": {
+    "outputDirectory": "junit"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +59,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "react-test-renderer": "^17.0.2"
   }
 }
