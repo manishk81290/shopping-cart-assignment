@@ -21,7 +21,6 @@ const ProductCategory = () => {
       return { name: cat.name, key: cat.key, id: cat.id, order: cat.order };
     })
     .filter((cat) => cat.order !== -1);
-  console.log(categoryList);
   return (
     <Col md={3} className="bg-col-e8e8e8 pr-0 pl-0">
       <Card style={{ width: "100%" }} className="xs-hide">
@@ -43,7 +42,7 @@ const ProductCategory = () => {
       >
         {categoryList.map((catList) => {
           return (
-            <Dropdown.Item>
+            <Dropdown.Item key={catList.key}>
               <Link to={`/products/${catList.id}`}>{catList.name}</Link>
             </Dropdown.Item>
           );

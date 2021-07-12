@@ -1,6 +1,9 @@
 import React from "react";
 import CartItem from "./../components/cart/CartItem";
-import ShallowRenderer from "react-test-renderer/shallow";
+import Adapter from "enzyme-adapter-react-16";
+import { shallow, configure } from "enzyme";
+
+configure({ adapter: new Adapter() });
 
 const testProps = {
   item: {
@@ -16,11 +19,31 @@ const testProps = {
     count: 3,
   },
   index: 1,
-  updateQuantity: 1,
+  updateQuantity: jest.fn(),
 };
 
-it("CartItem with mock useContext hook", () => {
-  const element = new ShallowRenderer().render(<CartItem {...testProps} />);
-  expect(element).toBeTruthy();
-  expect(element).toMatchSnapshot();
+describe("Cart Component test Suit", () => {
+  it("CartItem should match with snapshot", () => {
+    const tree = shallow(<CartItem {...testProps} />);
+    expect(tree).toBeTruthy();
+    expect(tree).toMatchSnapshot();
+  });
+  it("Cart Item quantity decrease test", () => {
+    //useContextMock.mockReturnValue(sampleContextData);
+    const tree = shallow(<CartItem {...testProps} />);
+    const decreaseQuantityBtn = tree.find(".quantity-dec");
+    decreaseQuantityBtn.simulate("click", "decrement", testProps.index);
+  });
+  it("Cart Item should be removed if quantity decrease from 1 to 0", () => {
+    //useContextMock.mockReturnValue(sampleContextDatawithSingleCartItem);
+    const tree = shallow(<CartItem {...testProps} />);
+    const decreaseQuantityBtn = tree.find(".quantity-dec");
+    decreaseQuantityBtn.simulate("click", "decrement", testProps.index);
+  });
+  it("Cart Item quantity increase test", () => {
+    //useContextMock.mockReturnValue(sampleContextData);
+    const tree = shallow(<CartItem {...testProps} />);
+    const increaseQuantityBtn = tree.find(".quantity-inc");
+    increaseQuantityBtn.simulate("click", "increment", testProps.index);
+  });
 });

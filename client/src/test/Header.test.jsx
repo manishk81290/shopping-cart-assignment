@@ -1,7 +1,9 @@
 import React from "react";
 import Header from "./../components/layout/Header";
-import ShallowRenderer from "react-test-renderer/shallow";
+import Adapter from "enzyme-adapter-react-16";
+import { shallow, configure } from "enzyme";
 
+configure({ adapter: new Adapter() });
 let realUseContext;
 let useContextMock;
 const sampleContextData = {
@@ -36,7 +38,8 @@ afterEach(() => {
 
 test("Header with mock useContext hook", () => {
   useContextMock.mockReturnValue(sampleContextData);
-  const element = new ShallowRenderer().render(<Header {...testProps} />);
-  expect(element).toBeTruthy();
-  expect(element).toMatchSnapshot();
+  const tree = shallow(<Header {...testProps} />);
+  expect(tree).toBeTruthy();
+  tree.find(".cart-btn").simulate("click");
+  expect(testProps.handleShow).toHaveBeenCalledTimes(1);
 });

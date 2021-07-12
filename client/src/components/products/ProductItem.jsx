@@ -55,7 +55,7 @@ const ProductItem = ({ item }) => {
             </Button>
             <Button
               variant="primary"
-              className="theme-button md"
+              className="theme-button md buynow"
               onClick={buyNow}
             >
               Buy Now @ Rs.{price}

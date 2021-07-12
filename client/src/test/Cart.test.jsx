@@ -1,7 +1,9 @@
 import React from "react";
 import Cart from "./../components/cart/Cart";
-import ShallowRenderer from "react-test-renderer/shallow";
+import Adapter from "enzyme-adapter-react-16";
+import { shallow, configure } from "enzyme";
 
+configure({ adapter: new Adapter() });
 let realUseContext;
 let useContextMock;
 const sampleContextData = {
@@ -22,9 +24,14 @@ const sampleContextData = {
   updateCart: () => {},
 };
 
+const sampleContextEmptyData = {
+  cart: [],
+  updateCart: () => {},
+};
+
 const testProps = {
   handleClose: jest.fn(),
-  show: Boolean,
+  show: true,
 };
 
 beforeEach(() => {
@@ -36,9 +43,16 @@ afterEach(() => {
   React.useContext = realUseContext;
 });
 
-it("Cart with mock useContext hook", () => {
-  useContextMock.mockReturnValue(sampleContextData);
-  const element = new ShallowRenderer().render(<Cart {...testProps} />);
-  expect(element).toBeTruthy();
-  expect(element).toMatchSnapshot();
+describe("Cart Component test cases", () => {
+  it("Cart should match with the snapshot", () => {
+    useContextMock.mockReturnValue(sampleContextData);
+    const tree = shallow(<Cart {...testProps} />);
+    expect(tree).toBeTruthy();
+    expect(tree).toMatchSnapshot();
+  });
+  it("Empty cart shouldn't render any item", () => {
+    useContextMock.mockReturnValue(sampleContextEmptyData);
+    const tree = shallow(<Cart {...testProps} />);
+    expect(tree).toBeTruthy();
+  });
 });

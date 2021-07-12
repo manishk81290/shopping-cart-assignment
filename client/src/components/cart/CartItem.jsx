@@ -11,7 +11,7 @@ export const CartItem = ({ item, index, updateQuantity }) => {
         <h5>{item.name}</h5>
         <Button
           variant="primary"
-          className="theme-button"
+          className="theme-button quantity-dec"
           onClick={() => {
             updateQuantity("decrement", index);
           }}
@@ -21,7 +21,7 @@ export const CartItem = ({ item, index, updateQuantity }) => {
         <span>{item.count}</span>
         <Button
           variant="primary"
-          className="theme-button"
+          className="theme-button quantity-inc"
           onClick={() => {
             updateQuantity("increment", index);
           }}

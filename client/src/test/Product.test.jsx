@@ -1,9 +1,13 @@
 import React from "react";
 import Product from "./../components/products/Product";
 import ShallowRenderer from "react-test-renderer/shallow";
+import Adapter from "enzyme-adapter-react-16";
+import { shallow, configure } from "enzyme";
 
+configure({ adapter: new Adapter() });
 let realUseContext;
 let useContextMock;
+let useEffect;
 const sampleContextData = {
   products: [
     {
@@ -22,6 +26,23 @@ const sampleContextData = {
   getProducts: () => {},
 };
 
+const sampleContextEmptyData = {
+  products: [],
+  getProducts: () => {},
+};
+
+const useEffectMock = () => {
+  useEffect.mockImplementationOnce((f) => f());
+};
+
+const testPropsAll = {
+  match: {
+    params: {
+      productCategory: "all",
+    },
+  },
+};
+
 const testProps = {
   match: {
     params: {
@@ -33,15 +54,32 @@ const testProps = {
 beforeEach(() => {
   realUseContext = React.useContext;
   useContextMock = React.useContext = jest.fn();
+  useEffect = jest.spyOn(React, "useEffect");
+  useEffectMock();
+  useEffectMock();
 });
 // Cleanup mock
 afterEach(() => {
   React.useContext = realUseContext;
 });
 
-it("Product with mock useContext hook", () => {
-  useContextMock.mockReturnValue(sampleContextData);
-  const element = new ShallowRenderer().render(<Product {...testProps} />);
-  expect(element).toBeTruthy();
-  expect(element).toMatchSnapshot();
+describe("Product Component Test cases", () => {
+  it("All products should appear with productCategory as all", () => {
+    useContextMock.mockReturnValue(sampleContextEmptyData);
+    const element = new ShallowRenderer().render(<Product {...testPropsAll} />);
+    expect(element).toBeTruthy();
+  });
+
+  it("Product with all productCategory", () => {
+    useContextMock.mockReturnValue(sampleContextData);
+    const element = new ShallowRenderer().render(<Product {...testPropsAll} />);
+    expect(element).toBeTruthy();
+  });
+
+  it("Product with specific productCategory", () => {
+    useContextMock.mockReturnValue(sampleContextData);
+    const element = shallow(<Product {...testProps} />);
+    expect(element).toBeTruthy();
+    expect(element).toMatchSnapshot();
+  });
 });
