@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Col,
@@ -11,7 +11,7 @@ import {
 import ShoppingContext from "../../context/ShoppingContext";
 
 const ProductCategory = () => {
-  const shoppingContext = useContext(ShoppingContext);
+  const shoppingContext = React.useContext(ShoppingContext);
   const { categories, getCategories } = shoppingContext;
   useEffect(() => {
     if (!categories.length) getCategories();

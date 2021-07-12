@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryItem with mock useContext hook 1`] = `
+<Row
+  className="cat-card align-items-center"
+  md={12}
+  noGutters={false}
+/>
+`;

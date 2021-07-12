@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./../layout/Header";
+import Product from "./../components/products/Product";
 import ShallowRenderer from "react-test-renderer/shallow";
 
 let realUseContext;
 let useContextMock;
 const sampleContextData = {
-  cart: [
+  products: [
     {
       name: "Capsicum - Green, 1 kg",
       imageURL: "/static/images/products/fruit-n-veg/capsicum-green.jpg",
@@ -19,6 +19,15 @@ const sampleContextData = {
       count: 2,
     },
   ],
+  getProducts: () => {},
+};
+
+const testProps = {
+  match: {
+    params: {
+      productCategory: "5b6c6f4a01a7c3842953088c",
+    },
+  },
 };
 
 beforeEach(() => {
@@ -30,9 +39,9 @@ afterEach(() => {
   React.useContext = realUseContext;
 });
 
-it("Header with mock useContext hook", () => {
+it("Product with mock useContext hook", () => {
   useContextMock.mockReturnValue(sampleContextData);
-  const element = new ShallowRenderer().render(<Header />);
+  const element = new ShallowRenderer().render(<Product {...testProps} />);
   expect(element).toBeTruthy();
   expect(element).toMatchSnapshot();
 });

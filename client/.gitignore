@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# snapshot directories
+**/test/__snapshots__
+
 # production
 /build
 

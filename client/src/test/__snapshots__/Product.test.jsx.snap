@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product with mock useContext hook 1`] = `
+<Col
+  lg={9}
+  md={9}
+  sm={12}
+>
+  <Row
+    lg={9}
+    md={12}
+    noGutters={false}
+    sm={12}
+  >
+    <ProductItem
+      item={
+        Object {
+          "category": "5b6899953d1a866534f516e2",
+          "count": 2,
+          "description": "Leaving a moderately pungent taste on the tongue, Green capsicums, also known as green peppers are bell shaped, medium-sized fruit pods.",
+          "id": "5b6c6bdc01a7c38429530886",
+          "imageURL": "/static/images/products/fruit-n-veg/capsicum-green.jpg",
+          "name": "Capsicum - Green, 1 kg",
+          "price": 137,
+          "sku": "fnw-capsicum-1",
+          "stock": 50,
+        }
+      }
+    />
+  </Row>
+</Col>
+`;

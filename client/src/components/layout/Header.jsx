@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Nav, Navbar, Container, Row, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "./../../static/images/logo_2x.png";
@@ -9,7 +9,7 @@ import ShoppingContext from "../../context/ShoppingContext";
 import "./layout.scss";
 
 const Header = ({ handleShow }) => {
-  const shoppingContext = useContext(ShoppingContext);
+  const shoppingContext = React.useContext(ShoppingContext);
   const { cart } = shoppingContext;
   return (
     <Navbar bg="light" expand="lg" className="navbar" fixed="top">

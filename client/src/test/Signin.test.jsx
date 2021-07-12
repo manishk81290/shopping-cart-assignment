@@ -1,5 +1,5 @@
 import React from "react";
-import Signin from "./../pages/SignIn";
+import Signin from "./../components/pages/SignIn";
 import Adapter from "enzyme-adapter-react-16";
 import { shallow, configure } from "enzyme";
 

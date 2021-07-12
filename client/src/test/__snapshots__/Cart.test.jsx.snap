@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart with mock useContext hook 1`] = `
+<Modal
+  animation={true}
+  autoFocus={true}
+  backdrop={true}
+  dialogAs={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  enforceFocus={true}
+  keyboard={true}
+  onHide={[MockFunction]}
+  restoreFocus={true}
+  show={[Function]}
+>
+  <ModalHeader
+    closeButton={true}
+    closeLabel="Close"
+  >
+    <ModalTitle>
+      My Cart
+       
+      <span>
+        (
+        2
+         
+        item)
+      </span>
+    </ModalTitle>
+  </ModalHeader>
+  <ModalBody
+    className={false}
+  >
+    <Container
+      fluid={true}
+    >
+      <CartItem
+        index={0}
+        item={
+          Object {
+            "category": "5b6899953d1a866534f516e2",
+            "count": 2,
+            "description": "Leaving a moderately pungent taste on the tongue, Green capsicums, also known as green peppers are bell shaped, medium-sized fruit pods.",
+            "id": "5b6c6bdc01a7c38429530886",
+            "imageURL": "/static/images/products/fruit-n-veg/capsicum-green.jpg",
+            "name": "Capsicum - Green, 1 kg",
+            "price": 137,
+            "sku": "fnw-capsicum-1",
+            "stock": 50,
+          }
+        }
+        updateQuantity={[Function]}
+      />
+    </Container>
+  </ModalBody>
+  <ModalFooter>
+    <p>
+      Promocode can be applied on payment page
+    </p>
+    <Button
+      active={false}
+      className="theme-button w-100"
+      disabled={false}
+      onClick={[MockFunction]}
+      variant="primary"
+    >
+      <span
+        className="btn-text"
+      >
+        Proceed to checkout
+      </span>
+      <span
+        className="total"
+      >
+        Rs.
+        274
+         
+        &gt;
+      </span>
+    </Button>
+  </ModalFooter>
+</Modal>
+`;

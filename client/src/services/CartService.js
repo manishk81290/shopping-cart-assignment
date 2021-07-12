@@ -1,15 +1,10 @@
-import axios from "axios";
+import { post } from "./api";
 import { CART_URL } from "./config";
 
 const CartService = {
   addToCart: async () => {
     try {
-      let response = [];
-      await axios.get(CART_URL).then((res) => {
-        response = res.data;
-        console.log(res);
-      });
-      return response;
+      return post(CART_URL);
     } catch (error) {
       console.log(error);
     }

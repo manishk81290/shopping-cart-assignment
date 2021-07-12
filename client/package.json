@@ -27,7 +27,8 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js, jsx}",
+      "src/**/*.jsx",
+      "src/**/*.js",
       "!src/index.js"
     ],
     "coverageReporters": [

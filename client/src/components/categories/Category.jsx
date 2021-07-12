@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Col, Image, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import CategoryItem from "./CategoryItem";
@@ -8,7 +8,7 @@ import "./category.scss";
 
 const Category = () => {
   let history = useHistory();
-  const shoppingContext = useContext(ShoppingContext);
+  const shoppingContext = React.useContext(ShoppingContext);
   const { categories, getCategories } = shoppingContext;
   useEffect(() => {
     if (!categories.length) getCategories();

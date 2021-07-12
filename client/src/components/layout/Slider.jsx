@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Row, Col, Carousel, Image } from "react-bootstrap";
 import ShoppingContext from "../../context/ShoppingContext";
 
 const Slider = () => {
-  const shoppingContext = useContext(ShoppingContext);
+  const shoppingContext = React.useContext(ShoppingContext);
   const { getBanners, banners } = shoppingContext;
   useEffect(() => {
     if (!banners.length) getBanners();

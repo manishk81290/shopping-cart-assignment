@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { Row, Col, Card, Button } from "react-bootstrap";
+import React from "react";
+import { Col, Card, Button } from "react-bootstrap";
 
 import ShoppingContext from "../../context/ShoppingContext";
 
@@ -15,7 +15,7 @@ const ProductItem = ({ item }) => {
     id,
     imageUrl,
   } = item;
-  const shoppingContext = useContext(ShoppingContext);
+  const shoppingContext = React.useContext(ShoppingContext);
   const { cart, updateCart } = shoppingContext;
 
   const buyNow = () => {

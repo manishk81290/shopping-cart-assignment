@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import CartItem from "./CartItem";
 
@@ -7,7 +7,7 @@ import ShoppingContext from "../../context/ShoppingContext";
 import "./cart.scss";
 
 const Cart = ({ show, handleClose }) => {
-  const shoppingContext = useContext(ShoppingContext);
+  const shoppingContext = React.useContext(ShoppingContext);
   const { cart, updateCart } = shoppingContext;
 
   const updateQuantity = (action, index) => {

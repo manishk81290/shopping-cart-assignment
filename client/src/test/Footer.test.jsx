@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./../layout/Footer";
+import Footer from "./../components/layout/Footer";
 import Adapter from "enzyme-adapter-react-16";
 import { shallow, configure } from "enzyme";
 

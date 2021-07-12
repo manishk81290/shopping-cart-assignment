@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header with mock useContext hook 1`] = `
+<Navbar
+  bg="light"
+  className="navbar"
+  collapseOnSelect={false}
+  expand="lg"
+  fixed="top"
+  variant="light"
+>
+  <Container
+    className="pos-rel"
+    fluid={false}
+  >
+    <Row
+      noGutters={false}
+    >
+      <Link
+        className="navbar-brand"
+        to="/"
+      >
+        <Image
+          alt="React Bootstrap logo"
+          className="logo"
+          fluid={false}
+          rounded={false}
+          roundedCircle={false}
+          src="logo_2x.png"
+          thumbnail={false}
+        />
+      </Link>
+      <Nav
+        className="mr-auto justify-content-center main-nav"
+        fill={false}
+        justify={false}
+      >
+        <Link
+          className="nav-link"
+          to="/"
+        >
+          Home
+        </Link>
+        <Link
+          className="nav-link"
+          to="/products/all"
+        >
+          Products
+        </Link>
+      </Nav>
+      <Nav
+        className="mr-auto justify-content-end auth-nav"
+        fill={false}
+        justify={false}
+      >
+        <Link
+          className="nav-link"
+          to="/signin"
+        >
+          SignIn
+        </Link>
+        <Link
+          className="nav-link"
+          to="/register"
+        >
+          Register
+        </Link>
+      </Nav>
+    </Row>
+    <Button
+      active={false}
+      className="cart-btn"
+      disabled={false}
+      onClick={[MockFunction]}
+      variant="primary"
+    >
+      <Image
+        alt="cart"
+        fluid={false}
+        rounded={false}
+        roundedCircle={false}
+        src="cart.svg"
+        thumbnail={false}
+      />
+       
+      2
+       
+      items
+    </Button>
+  </Container>
+</Navbar>
+`;

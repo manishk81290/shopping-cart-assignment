@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider with mock useContext hook 1`] = `
+<Row
+  className="mt-100- slider"
+  md={12}
+  noGutters={false}
+>
+  <Col>
+    <Carousel
+      className="bottom-shadow"
+      controls={true}
+      defaultActiveIndex={0}
+      fade={false}
+      indicators={true}
+      interval={1000}
+      keyboard={true}
+      nextIcon={
+        <span
+          aria-hidden="true"
+          className="carousel-control-next-icon"
+        />
+      }
+      nextLabel="Next"
+      pause="hover"
+      prevIcon={
+        <span
+          aria-hidden="true"
+          className="carousel-control-prev-icon"
+        />
+      }
+      prevLabel="Previous"
+      slide={true}
+      touch={true}
+      wrap={true}
+    >
+      <CarouselItem>
+        <Image
+          alt="Independence Day Deal - 25% off on shampoo"
+          fluid={false}
+          rounded={false}
+          roundedCircle={false}
+          src="/static/images/offers/offer1.jpg"
+          thumbnail={false}
+        />
+      </CarouselItem>
+    </Carousel>
+  </Col>
+</Row>
+`;

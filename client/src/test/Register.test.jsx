@@ -1,5 +1,5 @@
 import React from "react";
-import Register from "./../pages/Register";
+import Register from "./../components/pages/Register";
 import Adapter from "enzyme-adapter-react-16";
 import { shallow, configure } from "enzyme";
 
