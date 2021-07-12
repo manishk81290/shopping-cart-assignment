@@ -11,7 +11,6 @@ import ProductCategory from "./components/products/ProductCategory";
 import SignIn from "./components/pages/SignIn";
 import Register from "./components/pages/Register";
 import Cart from "./components/cart/Cart";
-
 import ShoppingState from "./context/ShoppingState";
 
 import "./App.scss";

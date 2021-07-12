@@ -6,6 +6,6 @@ export async function get(url) {
 }
 
 //HTTP POST CALL
-export async function post(url, data) {
-  return axios.post(`${process.env.PUBLIC_URL}${url}`, data);
+export async function post(url) {
+  return axios.post(`${process.env.PUBLIC_URL}${url}`);
 }

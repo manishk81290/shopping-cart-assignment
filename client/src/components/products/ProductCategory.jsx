@@ -29,11 +29,9 @@ const ProductCategory = () => {
         <ListGroup variant="flush">
           {categoryList.map((catList) => {
             return (
-              <>
-                <ListGroup.Item key={catList.key}>
-                  <Link to={`/products/${catList.id}`}>{catList.name}</Link>
-                </ListGroup.Item>
-              </>
+              <ListGroup.Item key={catList.key}>
+                <Link to={`/products/${catList.id}`}>{catList.name}</Link>
+              </ListGroup.Item>
             );
           })}
         </ListGroup>
@@ -45,11 +43,9 @@ const ProductCategory = () => {
       >
         {categoryList.map((catList) => {
           return (
-            <>
-              <Dropdown.Item>
-                <Link to={`/products/${catList.id}`}>{catList.name}</Link>
-              </Dropdown.Item>
-            </>
+            <Dropdown.Item>
+              <Link to={`/products/${catList.id}`}>{catList.name}</Link>
+            </Dropdown.Item>
           );
         })}
       </DropdownButton>

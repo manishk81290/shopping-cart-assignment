@@ -5,7 +5,9 @@ const Footer = ({ copyright }) => {
   return (
     <Container fluid>
       <Row md={12} className="footer">
-        <Col>Copyright &copy; 2021-2022 {copyright}</Col>
+        <Col>
+          Copyright &copy; 2011-{new Date().getFullYear()} {copyright}
+        </Col>
       </Row>
     </Container>
   );
