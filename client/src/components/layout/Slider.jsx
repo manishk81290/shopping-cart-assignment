@@ -22,21 +22,6 @@ const Slider = () => {
               </Carousel.Item>
             );
           })}
-          {/* <Carousel.Item>
-            <img className="d-block w-100" src={OfferOne} alt="First slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={OfferTwo} alt="Second slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={OfferThree} alt="Third slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={OfferFour} alt="Third slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={OfferFive} alt="Third slide" />
-          </Carousel.Item> */}
         </Carousel>
       </Col>
     </Row>

@@ -34,7 +34,7 @@ const Category = () => {
                 <p>{category.description}</p>
                 <Button
                   variant="primary"
-                  className="theme-button"
+                  className="theme-button get-product"
                   onClick={() => {
                     history.push(`/products/${category.id}`);
                   }}
@@ -50,7 +50,7 @@ const Category = () => {
                 <p>{category.description}</p>
                 <Button
                   variant="primary"
-                  className="theme-button"
+                  className="theme-button get-product"
                   onClick={() => {
                     history.push(`/products/${category.id}`);
                   }}
