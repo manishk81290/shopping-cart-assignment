@@ -83,6 +83,9 @@
         display: table-row;
         div {
           display: table-cell;
+          img {
+            border: 0px;
+          }
           p {
             font-size: 0.85rem;
             margin: 0;
