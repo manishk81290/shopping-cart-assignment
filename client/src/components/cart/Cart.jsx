@@ -1,9 +1,10 @@
 import React from "react";
-import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button, Image } from "react-bootstrap";
 import CartItem from "./CartItem";
 
 import ShoppingContext from "../../context/ShoppingContext";
 
+import LowestPrice from "./../../static/images/lowest-price.png";
 import "./cart.scss";
 
 const Cart = ({ show, handleClose }) => {
@@ -54,6 +55,18 @@ const Cart = ({ show, handleClose }) => {
                 <span>Your favourite items are just a click away</span>
               </Col>
             </Row>
+          )}
+          {cart.length && (
+            <Col xs={12} className="lowest-price">
+              <Row>
+                <Col xs={3}>
+                  <Image src={LowestPrice} thumbnail />
+                </Col>
+                <Col xs={9}>
+                  <p>You won't find it cheaper anywhere</p>
+                </Col>
+              </Row>
+            </Col>
           )}
         </Container>
       </Modal.Body>

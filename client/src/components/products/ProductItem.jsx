@@ -4,17 +4,7 @@ import { Col, Card, Button } from "react-bootstrap";
 import ShoppingContext from "../../context/ShoppingContext";
 
 const ProductItem = ({ item }) => {
-  const {
-    name,
-    imageURL,
-    description,
-    price,
-    stock,
-    category,
-    sku,
-    id,
-    imageUrl,
-  } = item;
+  const { name, imageURL, description, price, id } = item;
   const shoppingContext = React.useContext(ShoppingContext);
   const { cart, updateCart } = shoppingContext;
 
@@ -41,7 +31,12 @@ const ProductItem = ({ item }) => {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
         </Card.Body>
-        <Card.Img variant="top" src={`${process.env.PUBLIC_URL}${imageURL}`} />
+        <Col md={12}>
+          <Card.Img
+            variant="top"
+            src={`${process.env.PUBLIC_URL}${imageURL}`}
+          />
+        </Col>
         <Card.Body>
           <Card.Text>{description}</Card.Text>
           <div>

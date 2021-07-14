@@ -103,7 +103,7 @@
   display: none;
 }
 
-@media only screen and (device-width: 768px) {
+@media only screen and (max-width: 992px) {
   .navbar-nav {
     flex-direction: inherit;
     .nav-link:first-child {
@@ -145,5 +145,11 @@
 
   .xs-hide {
     display: none;
+  }
+
+  .modal-dialog {
+    .modal-content {
+      height: 100vh;
+    }
   }
 }

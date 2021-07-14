@@ -74,6 +74,23 @@
         }
       }
     }
+    .lowest-price {
+      background-color: #ffffff;
+      padding: 5px;
+      border-radius: 5px;
+      display: table;
+      .row {
+        display: table-row;
+        div {
+          display: table-cell;
+          p {
+            font-size: 0.85rem;
+            margin: 0;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
   }
   .modal-footer {
     justify-content: inherit;

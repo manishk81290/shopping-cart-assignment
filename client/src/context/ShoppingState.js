@@ -49,13 +49,13 @@ const ShoppingState = (props) => {
   };
 
   const updateCart = (item) => {
-    CartService.addToCart().then(({ ...res }) => {
-      //const data = res.data;
-      dispatch({
-        type: UPDATE_CART,
-        payload: item,
-      });
+    //CartService.addToCart().then(({ ...res }) => {
+    //const data = res.data;
+    dispatch({
+      type: UPDATE_CART,
+      payload: item,
     });
+    //});
   };
 
   return (
